@@ -43,7 +43,7 @@ def submit_code():
         problem_input = driver.find_element(By.NAME, 'submittedProblemCode')
         problem_input.clear()
         problem_input.send_keys(problem_id)
-        time.sleep(random.uniform(0.5, 1.5))
+        time.sleep(random.uniform(2.1, 4))
         # toggleEditorCheckbox
         toggle_editor = driver.find_element(By.ID, 'toggleEditorCheckbox')
         if not toggle_editor.is_selected():
@@ -53,12 +53,12 @@ def submit_code():
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, 'sourceCodeTextarea'))
         )
-        time.sleep(random.uniform(0.5, 1.5))
+        time.sleep(random.uniform(1, 4))
         code_textarea = driver.find_element(By.ID, 'sourceCodeTextarea')
         code_textarea.clear()
         # paste code without sending keys
         driver.execute_script("arguments[0].value = arguments[1];", code_textarea, code)
-        time.sleep(random.uniform(0.5, 1.5))
+        time.sleep(random.uniform(1, 3))
         # singlePageSubmitButton
         submit_button = driver.find_element(By.ID, 'singlePageSubmitButton')
         submit_button.click()
@@ -83,17 +83,28 @@ def submit_code():
         return jsonify({'status': 'error', 'message': str(e)}), 500
 # rate limit status checks to once every 3 seconds
 last_status_check = 0
+cached_result = None
 @app.route("/status", methods=['GET'])
 def status(submission_id=None):
     # get status page
-    driver.get("https://codeforces.com/problemset/status?my=on")
+    global last_status_check
+    is_cached=False
+    current_time = time.time()
+    if current_time - last_status_check < random.uniform(4, 6): # 4 to 6 seconds
+        is_cached=True
+    else:
+        driver.get("https://codeforces.com/problemset/status?my=on")
+        last_status_check = current_time
     try:
-        WebDriverWait(driver,10).until(
-                EC.presence_of_element_located((By.NAME, 'my'))
-        )
-        # by classname status-frame-datatable
-        table = driver.find_element(By.CLASS_NAME, 'status-frame-datatable')
-        soup = BeautifulSoup(table.get_attribute('innerHTML'), 'html.parser')
+        if not is_cached:
+            WebDriverWait(driver,10).until(
+                    EC.presence_of_element_located((By.NAME, 'my'))
+            )
+            # by classname status-frame-datatable
+            table = driver.find_element(By.CLASS_NAME, 'status-frame-datatable')
+            global cached_result
+            cached_result = table.get_attribute('innerHTML')
+        soup = BeautifulSoup(cached_result, 'html.parser')
         rows = soup.find_all('tr')
         # look at 
         # Get second row
@@ -102,11 +113,6 @@ def status(submission_id=None):
         # look for last_submission
         global last_submission
         target_submission_id = submission_id if submission_id else last_submission
-        global last_status_check
-        current_time = time.time()
-        if current_time - last_status_check < 5:
-            return jsonify({'status': 'error', 'message': 'Status checks are limited to once every 3 seconds.'}), 429
-        last_status_check = current_time
         for row in rows[1:]:
             cols = row.find_all('td')
             current_submission_id = cols[0].text.strip()
@@ -115,6 +121,7 @@ def status(submission_id=None):
                 verdict = cols[5].text.strip()
                 time_used = cols[6].text.strip()
                 memory_used = cols[7].text.strip()
+
                 return jsonify({
                     'status': 'success',
                     'problem': problem,
