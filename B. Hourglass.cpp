@@ -8,7 +8,7 @@ using namespace std;
 typedef long long ll;
 // CHASH -> Crazy Hellish Asseninely Stupid Hash 
 static const uint64_t CHRONO_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-static const uint64_t PIDRNDP = (uint64_t)(getpid())*0xbffbffbffULL;//getpid is often blocked. therefore, use chrono AGAIN
+static const uint64_t PIDRNDP = (uint64_t)(getpid())*0xbffbffbffULL; // getpid works properly on Codeforces!!
 static mt19937_64 PIDRNG(PIDRNDP);
 static const uint64_t PIDRND = PIDRNG();
 static const uint64_t FIXED_RANDOM = CHRONO_RANDOM ^ PIDRND;
