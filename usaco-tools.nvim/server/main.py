@@ -4,8 +4,8 @@ import os
 import io
 import zipfile
 import shutil
-import email
-from email.policy import HTTP
+import json
+import urllib.request
 
 PORT = 27182
 TEMPLATE_PATH = "template/USACO.cpp"
@@ -18,33 +18,33 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 content_length = int(self.headers['Content-Length'])
                 body = self.rfile.read(content_length)
                 
-                # Reconstruct a minimal message for the email parser
-                ct = self.headers['Content-Type']
-                msg_bytes = f"Content-Type: {ct}\r\n\r\n".encode('utf-8') + body
-                
-                msg = email.message_from_bytes(msg_bytes, policy=HTTP)
-                
-                problem_name = None
-                zip_data = None
-                
-                if msg.is_multipart():
-                    for part in msg.iter_parts():
-                        field_name = part.get_param('name', header='Content-Disposition')
+                try:
+                    data = json.loads(body)
+                    problem_name = data.get('name')
+                    zip_url = data.get('url')
+                except json.JSONDecodeError:
+                    # Fallback or error if not JSON
+                    self.send_error(400, "Invalid JSON")
+                    return
+
+                if problem_name and zip_url:
+                    print(f"Downloading zip from {zip_url}...")
+                    try:
+                        # Download the zip file
+                        with urllib.request.urlopen(zip_url) as response:
+                            zip_data = response.read()
                         
-                        if field_name == 'name':
-                            problem_name = part.get_payload(decode=True).decode('utf-8')
-                        elif field_name == 'zip':
-                            zip_data = part.get_payload(decode=True)
-                
-                if problem_name and zip_data:
-                    self.process_submission(problem_name, zip_data)
-                    self.send_response(200)
-                    self.send_header('Access-Control-Allow-Origin', '*')
-                    self.end_headers()
-                    self.wfile.write(b"OK")
+                        self.process_submission(problem_name, zip_data)
+                        self.send_response(200)
+                        self.send_header('Access-Control-Allow-Origin', '*')
+                        self.end_headers()
+                        self.wfile.write(b"OK")
+                    except Exception as e:
+                        print(f"Download error: {e}")
+                        self.send_error(500, f"Failed to download zip: {str(e)}")
                 else:
-                    print("Missing fields:", "name" if not problem_name else "", "zip" if not zip_data else "")
-                    self.send_error(400, "Missing name or zip data")
+                    print("Missing fields:", "name" if not problem_name else "", "url" if not zip_url else "")
+                    self.send_error(400, "Missing name or url")
 
             except Exception as e:
                 print(f"Error: {e}")

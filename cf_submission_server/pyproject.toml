@@ -1,7 +1,7 @@
 [project]
 name = "cf-submit"
 version = "0.1.0"
-description = "Add your description here"
+description = "something something selenium go brrr"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

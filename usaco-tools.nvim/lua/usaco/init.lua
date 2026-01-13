@@ -4,6 +4,15 @@ local loop = vim.loop or vim.uv
 local server_pid = nil
 
 function M.setup()
+    -- Configuration or other setup if needed
+end
+
+function M.start_server()
+    if server_pid then
+        print("USACO Server is already running")
+        return
+    end
+
     -- Path to the python script
     local script_path = vim.fn.stdpath('data') .. '/lazy/usaco-tools.nvim/server/main.py'
     -- Note: The above path assumes typical lazy.nvim install. 
@@ -42,7 +51,7 @@ function M.setup()
 
     if handle then
         server_pid = pid
-        -- print("USACO Server started with PID", pid)
+        print("USACO Server started with PID", pid)
         
         loop.read_start(stdout, vim.schedule_wrap(function(err, data)
             if data then
@@ -70,11 +79,20 @@ function M.setup()
     end
 end
 
-function M.restart()
+function M.stop_server()
     if server_pid then
         loop.kill(server_pid, 15)
+        server_pid = nil
+        print("USACO Server stopped")
+    else
+        print("USACO Server is not running")
     end
-    vim.defer_fn(M.setup, 1000)
+end
+
+
+function M.restart()
+    M.stop_server()
+    vim.defer_fn(M.start_server, 1000)
 end
 
 return M

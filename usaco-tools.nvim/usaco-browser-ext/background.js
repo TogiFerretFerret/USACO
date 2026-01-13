@@ -1,6 +1,6 @@
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'submit') {
-        uploadData(message.name, message.zipBuffer)
+        uploadData(message.name, message.url)
             .then(() => sendResponse({success: true}))
             .catch(err => {
                 console.error(err);
@@ -10,17 +10,16 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 
-async function uploadData(name, zipBuffer) {
-    // Convert ArrayBuffer back to Blob
-    const blob = new Blob([zipBuffer], {type: 'application/zip'});
-    
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("zip", blob, "testdata.zip");
-
+async function uploadData(name, url) {
     const response = await fetch("http://localhost:27182/submit", {
         method: "POST",
-        body: formData
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            url: url
+        })
     });
 
     if (!response.ok) {
