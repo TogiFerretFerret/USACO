@@ -133,6 +133,9 @@ def status(submission_id=None):
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 driver.get('https://codeforces.com/') # preload as a test
+input("Preload 1 passed? Ctrl-C/Enter: ")
+driver.get("https://codeforces.com/problemset/submit")
+input("Preload 2 passed? Ctrl-C/Enter: ")
 app.run()
 
 
