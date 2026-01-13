@@ -31,8 +31,8 @@ def submit_code():
     data = request.json
     problem_id = data.get('problem_id')
     code = data.get('code')
-    # Navigate to the problem page https://codeforces.com/problemset/submit
-    driver.get('https://codeforces.com/problemset/submit')
+    # Navigate to the problem page https://mirror.codeforces.com/problemset/submit
+    driver.get('https://mirror.codeforces.com/problemset/submit')
     try:
         # Wait until the page is loaded and the problem dropdown is available
         WebDriverWait(driver, 10).until(
@@ -63,7 +63,7 @@ def submit_code():
         submit_button = driver.find_element(By.ID, 'singlePageSubmitButton')
         submit_button.click()
         # wait to be redirected to 
-        # https://codeforces.com/problemset/status?my=on
+        # https://mirror.codeforces.com/problemset/status?my=on
         WebDriverWait(driver, 10).until(
             EC.url_contains('/problemset/status')
         )
@@ -93,7 +93,7 @@ def status(submission_id=None):
     if current_time - last_status_check < random.uniform(4, 6): # 4 to 6 seconds
         is_cached=True
     else:
-        driver.get("https://codeforces.com/problemset/status?my=on")
+        driver.get("https://mirror.codeforces.com/problemset/status?my=on")
         last_status_check = current_time
     try:
         if not is_cached:
@@ -132,7 +132,7 @@ def status(submission_id=None):
                 }), 200
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
-driver.get('https://codeforces.com/') # preload as a test
+driver.get('https://mirror.codeforces.com/') # preload as a test
 app.run()
 
 

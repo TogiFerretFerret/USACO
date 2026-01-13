@@ -37,7 +37,8 @@ using tensor=vector<matrix<TM>>;
 #define forn(i,n) for(int i=0;i<(n);++i)
 #define MULTITEST true
 void solve(){
-	int s,k,m;in(s,k,m);
+	int s,k,m;
+	in(s,k,m);
 	out((s<=k)?max(0,s-m%k):(((m%(2*k))<k)?s-m%k:k-m%k));
 }
 int main(){
