@@ -32,7 +32,7 @@
 
     async function sendToNvim(link, button) {
         const originalText = button.textContent;
-        button.textContent = "Sending...";
+        button.textContent = "Downloading...";
         button.disabled = true;
 
         try {
@@ -48,11 +48,19 @@
                  if (h2) problemName = h2.textContent.trim();
             }
 
-            // 2. Send URL to Background Script
+            // 2. Download Zip (in content script to share session/cookies)
+            const response = await fetch(link.href);
+            if (!response.ok) throw new Error("Failed to download zip: " + response.status);
+            const arrayBuffer = await response.arrayBuffer();
+            
+            button.textContent = "Sending...";
+
+            // 3. Send to Background Script
+            // Pass the ArrayBuffer. The background script will handle the upload.
             const res = await browser.runtime.sendMessage({
                 type: 'submit',
                 name: problemName,
-                url: link.href
+                zipBuffer: Array.from(new Uint8Array(arrayBuffer)) // Serialize as standard array to be safe
             });
 
             if (res && res.success) {

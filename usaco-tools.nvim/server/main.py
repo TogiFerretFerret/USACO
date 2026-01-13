@@ -4,8 +4,7 @@ import os
 import io
 import zipfile
 import shutil
-import json
-import urllib.request
+import urllib.parse
 
 PORT = 27182
 TEMPLATE_PATH = "template/USACO.cpp"
@@ -15,36 +14,34 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/submit':
             try:
-                content_length = int(self.headers['Content-Length'])
-                body = self.rfile.read(content_length)
+                # 1. Get Problem Name from Header
+                # Headers are case-insensitive in get(), but let's be precise.
+                problem_name_header = self.headers.get('X-Problem-Name')
                 
+                if not problem_name_header:
+                    self.send_error(400, "Missing X-Problem-Name header")
+                    return
+                
+                # Decode URL-encoded name (just in case)
+                problem_name = urllib.parse.unquote(problem_name_header)
+
+                # 2. Read Raw Body (Zip Data)
                 try:
-                    data = json.loads(body)
-                    problem_name = data.get('name')
-                    zip_url = data.get('url')
-                except json.JSONDecodeError:
-                    # Fallback or error if not JSON
-                    self.send_error(400, "Invalid JSON")
+                    content_length = int(self.headers['Content-Length'])
+                    zip_data = self.rfile.read(content_length)
+                except (ValueError, TypeError):
+                    self.send_error(400, "Missing or invalid Content-Length")
                     return
 
-                if problem_name and zip_url:
-                    print(f"Downloading zip from {zip_url}...")
-                    try:
-                        # Download the zip file
-                        with urllib.request.urlopen(zip_url) as response:
-                            zip_data = response.read()
-                        
-                        self.process_submission(problem_name, zip_data)
-                        self.send_response(200)
-                        self.send_header('Access-Control-Allow-Origin', '*')
-                        self.end_headers()
-                        self.wfile.write(b"OK")
-                    except Exception as e:
-                        print(f"Download error: {e}")
-                        self.send_error(500, f"Failed to download zip: {str(e)}")
+                if zip_data:
+                    print(f"Received {len(zip_data)} bytes for '{problem_name}'")
+                    self.process_submission(problem_name, zip_data)
+                    self.send_response(200)
+                    self.send_header('Access-Control-Allow-Origin', '*')
+                    self.end_headers()
+                    self.wfile.write(b"OK")
                 else:
-                    print("Missing fields:", "name" if not problem_name else "", "url" if not zip_url else "")
-                    self.send_error(400, "Missing name or url")
+                    self.send_error(400, "Empty body")
 
             except Exception as e:
                 print(f"Error: {e}")
@@ -58,7 +55,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        # Allow our custom header
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type, X-Problem-Name')
         self.end_headers()
 
     def process_submission(self, name, zip_bytes):
