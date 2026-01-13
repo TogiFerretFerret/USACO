@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "USACO to Neovim",
+  "version": "1.0",
+  "description": "Send USACO problem data to Neovim",
+  "permissions": [
+    "activeTab",
+    "http://localhost/*",
+    "https://usaco.org/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://usaco.org/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "usaco-to-nvim@river"
+    }
+  }
+}
