@@ -32,7 +32,7 @@ def submit_code():
     problem_id = data.get('problem_id')
     code = data.get('code')
     # Navigate to the problem page https://codeforces.com/problemset/submit
-    driver.get('https://mirror.codeforces.com/problemset/submit')
+    driver.get('https://codeforces.com/problemset/submit')
     try:
         # Wait until the page is loaded and the problem dropdown is available
         WebDriverWait(driver, 10).until(
@@ -63,7 +63,7 @@ def submit_code():
         submit_button = driver.find_element(By.ID, 'singlePageSubmitButton')
         submit_button.click()
         # wait to be redirected to 
-        # https://mirror.codeforces.com/problemset/status?my=on
+        # https://codeforces.com/problemset/status?my=on
         WebDriverWait(driver, 10).until(
             EC.url_contains('/problemset/status')
         )
@@ -86,7 +86,7 @@ last_status_check = 0
 @app.route("/status", methods=['GET'])
 def status(submission_id=None):
     # get status page
-    driver.get("https://mirror.codeforces.com/problemset/status?my=on")
+    driver.get("https://codeforces.com/problemset/status?my=on")
     try:
         WebDriverWait(driver,10).until(
                 EC.presence_of_element_located((By.NAME, 'my'))
@@ -125,7 +125,7 @@ def status(submission_id=None):
                 }), 200
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
-driver.get('https://mirror.codeforces.com/') # preload as a test
+driver.get('https://codeforces.com/') # preload as a test
 app.run()
 
 
