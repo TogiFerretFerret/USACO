@@ -6,7 +6,7 @@ local stdout = nil
 
 -- Default configuration
 local config = {
-    cmd = { "lrcsnc", "waybar" }, -- Command to run
+    cmd = { "lrcsnc" }, -- Command to run
     max_length = 40,              -- Max length of lyrics to display
     icon = "♪",                   -- Icon to show before lyrics
 }

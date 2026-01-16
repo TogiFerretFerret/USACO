@@ -13,7 +13,7 @@ A Neovim plugin to display lyrics from `lrcsnc` in your statusline via [lualine.
 
 ```lua
 {
-  "dir": "~/USACO/cptools/lualine-lrcsnc.nvim", -- Or wherever you store local plugins
+  dir = "~/USACO/cptools/lualine-lrcsnc.nvim", -- Or wherever you store local plugins
   dependencies = { "nvim-lualine/lualine.nvim" },
   config = function()
     require("lrcsnc").setup({
