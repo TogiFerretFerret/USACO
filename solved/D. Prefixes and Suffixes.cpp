@@ -42,16 +42,26 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
-#define MULTITEST false
+#define MULTITEST true
 #define pb push_back
 void solve(){
 	int n;string s1,s2;in(n,s1,s2);
 	hashmap<pair<int,int>,int> mp;
-	unordered_set<int,CHASH> st;
+	unordered_set<pair<int,int>,CHASH> st;
 	int cos=0,co=cos;
 	forn(i,n){
-		pair<int,int> 
+		pair<int,int> p={s1[i],s2[n-i-1]};
+		if(p.first>p.second)p={p.second,p.first};
+		if(st.count(p)!=0){
+			++mp[p];if(mp[p]%2==1)++co,cos=(p.first==p.second?cos+1:cos); else --co,cos=(p.first==p.second?cos-1:cos);
+		}
+		else{
+			st.insert(p);
+			mp[p]=1;
+			++co;cos=(p.first==p.second?cos+1:cos);
+		}
 	}
+	out((n%2==cos&&co==cos)?"YES":"NO");
 }
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
