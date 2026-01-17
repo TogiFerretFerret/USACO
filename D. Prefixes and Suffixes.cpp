@@ -50,6 +50,7 @@ void solve(){
 	unordered_set<int,CHASH> st;
 	int cos=0,co=cos;
 	forn(i,n){
+		pair<int,int> 
 	}
 }
 int main(){
