@@ -45,7 +45,12 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 #define MULTITEST false
 #define pb push_back
 void solve(){
-
+	int n;string s1,s2;in(n,s1,s2);
+	hashmap<pair<int,int>,int> mp;
+	unordered_set<int,CHASH> st;
+	int cos=0,co=cos;
+	forn(i,n){
+	}
 }
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
