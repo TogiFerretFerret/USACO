@@ -48,9 +48,9 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 #define ss second
 void solve(){
 	ll n;in(n);
-	vector<ll> track(n+1,0),sum(n+1,0);
+	vector<ll> track(n+5,0),sum(n+5,0);
     vector<pair<ll,pair<ll,ll>>> trav; 
-    vector<ll> pref(n+1,0),dp(n+1,0);
+    vector<ll> pref(n+5,0),dp(n+5,0);
     for(ll i=1;i<=n;i++){
         ll x; in(x);
         sum[i]=sum[i-1]+i; trav.pb({x-i,{i,0}});
