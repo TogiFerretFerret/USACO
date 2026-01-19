@@ -3,11 +3,15 @@
 // URL: https://codeforces.com/contest/2171/problem/G
 // Memory Limit: 256 MB
 // Time Limit: 4000 ms
+// OMG I LOVE YURIIII! edit: LET'S GO ITS THE YURI CONTEST!!! https://codeforces.com/contest/2171
+// edits: making list 
+// problem F: in love with the villainess
+// Problem G: light novel; adachi and shimamura
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 static const uint64_t CHRONO_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-static const uint64_t PIDRNDP = (uint64_t)(getpid())*0xbffbffbffULL;
+static const uint64_t PIDRNDP = (uint64_t)(getpid())*0x1f4ef1337fULL;
 static mt19937_64 PIDRNG(PIDRNDP);
 static const uint64_t PIDRND = PIDRNG();
 static const uint64_t FIXED_RANDOM = CHRONO_RANDOM ^ PIDRND;
@@ -16,7 +20,7 @@ struct CHASH {
         return hash<T>{}(x) ^ FIXED_RANDOM;
     }
     template <typename T1, typename T2> size_t operator()(const pair<T1, T2>& x) const {
-        return (*this)(x.first) ^ ((*this)(x.second) + 0x9e3779b9 + (x.first << 6) + (x.first >> 2));
+        return (*this)(x.first) ^ ((*this)(x.second) + 0x9e1337e9 + (x.first << 6) + (x.first >> 2));
     }
 };
 template<class T, class U> istream& operator>>(istream& i, pair<T, U>& p) { return i >> p.first >> p.second; }
