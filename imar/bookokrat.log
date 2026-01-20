@@ -1,0 +1,217 @@
+16:12:23 Starting Bookokrat EPUB reader
+16:12:23 Settings file not found, creating with defaults at "/home/river/.config/bookokrat/config.yaml"
+16:12:23 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
+16:12:23 [DEBUG] (1) bookokrat::theme: Applied saved theme: Oceanic Next
+16:12:23 Image picker initial protocol type: Kitty
+16:12:23 Kitty protocol detected, using Kitty
+16:12:23 Final protocol type: Kitty
+16:12:23 [DEBUG] (1) bookokrat::main_app: Initial terminal size: 196x49
+16:12:23 Failed to open requested book: Book not found in manager: v01.epub
+16:12:25 Loading document from path: ./v01.epub
+16:12:25 Attempting to load EPUB file: ./v01.epub
+16:12:25 Successfully created EpubDoc for: ./v01.epub
+16:12:25 EPUB spine details: 12 pages, current position: 0
+16:12:25 EPUB title: I’m in Love with the Villainess Vol. 1
+16:12:25 EPUB author: Inori
+16:12:25 Initial content available at position 0, mime: application/xhtml+xml, size: 858 bytes
+16:12:25 Successfully loaded EPUB document ./v01.epub, total_chapter: 12, current position: 0
+16:12:25 [DEBUG] (1) bookokrat::images::book_images: Loading images for book: "./v01.epub"
+16:12:25 Starting image extraction for: ./v01.epub
+16:12:25 Found 25 resources in EPUB
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3_jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_COLORGALLERY__jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2_jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2_jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2_jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3_jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image sevenseaslogo_jpg: "OEBPS/Images/sevenseaslogo.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_4_jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_4.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS__jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image cover: "OEBPS/Images/CoverDesign.jpg" (image/jpeg)
+16:12:25 [DEBUG] (1) bookokrat::images::image_storage: Extracting image ImInLoveWithTheVillainess-Vol1_FRONTMATTER__jpg: "OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg" (image/jpeg)
+16:12:25 Extracted 11 images to "temp_images/v01" (content_root: Some("OEBPS"))
+16:12:25 Failed to move to next chapter with go_next()
+16:12:25 Current position: 11, Total chapters: 12
+16:12:25 Attempting fallback: set_current_chapter(1)
+16:12:25 Fallback successful: moved to chapter 1 using set_current_chapter
+16:12:25 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 0 images to load in document
+16:12:28 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg"'
+16:12:28 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg' size: 1425x2000
+16:12:28 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg"'
+16:12:28 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg' size: 1425x2000
+16:12:28 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 2 images to load in document
+16:12:28 [DEBUG] (3) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg"'
+16:12:28 [DEBUG] (3) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg
+16:12:28 [DEBUG] (3) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_.jpg from 1425x2000 to 459x645
+16:12:28 [DEBUG] (3) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg"'
+16:12:28 [DEBUG] (3) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg
+16:12:28 [DEBUG] (3) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_COLORGALLERY_2.jpg from 1425x2000 to 459x645
+16:12:28 Background image loading complete: 2 images loaded and scaled in 452.274424ms
+16:12:28 [DEBUG] (1) bookokrat::images::background_image_loader: Received 2 loaded images from background thread
+16:12:28 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 35KB (54% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 42KB (45% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 49KB (36% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 50KB (35% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 52KB (32% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 43KB (44% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 40KB (48% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 39KB (50% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 41KB (47% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 34KB (56% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 38KB (51% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 47KB (39% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 48KB (37% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 47KB (39% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 49KB (37% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (84% reduction)
+16:12:28 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 24KB (69% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 26KB (67% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 25KB (68% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 24KB (69% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 29KB (62% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 26KB (66% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 24KB (69% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 26KB (66% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 30KB (62% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 22KB (72% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 22KB (71% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 22KB (71% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 24KB (68% reduction)
+16:12:29 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (81% reduction)
+16:12:29 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 694ms
+16:12:32 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg"'
+16:12:32 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg' size: 1425x2000
+16:12:32 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 1 images to load in document
+16:12:32 [DEBUG] (4) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg"'
+16:12:32 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 18ms
+16:12:32 [DEBUG] (4) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg
+16:12:32 [DEBUG] (4) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_.jpg from 1425x2000 to 459x645
+16:12:32 Background image loading complete: 1 images loaded and scaled in 121.285145ms
+16:12:32 [DEBUG] (1) bookokrat::images::background_image_loader: Received 1 loaded images from background thread
+16:12:32 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 11KB (85% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 16KB (79% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 24KB (69% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 27KB (65% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 20KB (74% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (84% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 12KB (84% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 12KB (84% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 10KB (86% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (80% reduction)
+16:12:32 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:12:32 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 246ms
+16:12:33 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg"'
+16:12:33 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg' size: 1425x2000
+16:12:33 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 1 images to load in document
+16:12:33 [DEBUG] (5) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg"'
+16:12:34 [DEBUG] (5) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg
+16:12:34 [DEBUG] (5) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_2.jpg from 1425x2000 to 459x645
+16:12:34 Background image loading complete: 1 images loaded and scaled in 106.518563ms
+16:12:34 [DEBUG] (1) bookokrat::images::background_image_loader: Received 1 loaded images from background thread
+16:12:34 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 0KB (100% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 0KB (100% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 1KB (98% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 3KB (96% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 7KB (90% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 7KB (90% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 7KB (91% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 9KB (88% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 5KB (93% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 4KB (95% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 6KB (92% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 8KB (90% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 5KB (93% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 5KB (93% reduction)
+16:12:34 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 0KB (100% reduction)
+16:12:34 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 183ms
+16:12:35 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg"'
+16:12:35 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg' size: 1425x2000
+16:12:35 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 1 images to load in document
+16:12:35 [DEBUG] (6) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg"'
+16:12:35 [DEBUG] (6) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg
+16:12:35 [DEBUG] (6) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_FRONTMATTER_3.jpg from 1425x2000 to 459x645
+16:12:35 Background image loading complete: 1 images loaded and scaled in 118.368653ms
+16:12:35 [DEBUG] (1) bookokrat::images::background_image_loader: Received 1 loaded images from background thread
+16:12:35 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 11KB (85% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 12KB (84% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (80% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 11KB (85% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 16KB (79% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (80% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:12:35 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 12KB (85% reduction)
+16:12:35 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 180ms
+16:12:36 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg"'
+16:12:36 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg' size: 1425x2000
+16:12:36 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 1 images to load in document
+16:12:36 [DEBUG] (7) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg"'
+16:12:36 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 31ms
+16:12:36 [DEBUG] (7) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg
+16:12:36 [DEBUG] (7) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_.jpg from 1425x2000 to 459x645
+16:12:36 Background image loading complete: 1 images loaded and scaled in 127.85225ms
+16:12:36 [DEBUG] (1) bookokrat::images::background_image_loader: Received 1 loaded images from background thread
+16:12:36 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+16:14:48 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 29ms
+16:14:49 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 57ms
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 8KB (89% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 8KB (89% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (80% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 18KB (77% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 18KB (76% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 18KB (76% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (80% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 16KB (79% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 17KB (78% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 15KB (80% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 17KB (77% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+16:41:18 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (81% reduction)
+16:41:18 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 78ms
+17:20:00 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg"'
+17:20:00 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg' size: 1425x2000
+17:20:00 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg"'
+17:20:00 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg' size: 1425x2000
+17:20:00 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 2 images to load in document
+17:20:00 [DEBUG] (8) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg"'
+17:20:00 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 11ms
+17:20:00 [DEBUG] (8) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg
+17:20:00 [DEBUG] (8) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_2.jpg from 1425x2000 to 459x645
+17:20:00 [DEBUG] (8) bookokrat::images::image_storage: Resolved image '../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg' to '"temp_images/v01/OEBPS/Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg"'
+17:20:00 [DEBUG] (8) bookokrat::images::book_images: Successfully loaded image: ../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg
+17:20:00 [DEBUG] (8) bookokrat::images::book_images: Resizing ../Images/ImInLoveWithTheVillainess-Vol1_INTERIORILLUSTRATIONS_3.jpg from 1425x2000 to 459x645
+17:20:00 Background image loading complete: 2 images loaded and scaled in 62.075152ms
+17:20:00 [DEBUG] (1) bookokrat::images::background_image_loader: Received 2 loaded images from background thread
+17:20:00 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 11KB (85% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 17KB (78% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 16KB (79% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 20KB (74% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 27KB (65% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 23KB (70% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 22KB (72% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 16KB (80% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 16KB (79% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 13KB (83% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+17:20:02 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 77KB to 14KB (82% reduction)
+17:20:02 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 116ms
