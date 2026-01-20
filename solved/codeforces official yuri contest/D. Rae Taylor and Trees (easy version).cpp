@@ -3,6 +3,8 @@
 // URL: https://codeforces.com/contest/2171/problem/F
 // Memory Limit: 256 MB
 // Time Limit: 3000 ms
+//
+// as i RE-read the light novel while working on this problem, the uhh first chapter STARTS with the line from the problem statement :-)
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -42,10 +44,24 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
-#define MULTITEST false
+#define MULTITEST true
+// currently listening to cruel angel's thesis [director's edit version] (neon genesis evangelion op)
+// mostly cuz i dont know what the villainess op/ed is
 #define pb push_back
 void solve(){
-	
+	int n;in(n);
+    vector<int> p(n+1), pre(n+1, n);
+    vector<pair<int, int>> suf(n+2);
+    forn(i,n){// n to 1, inclusive -> n-0 to n-(n-1) inclusive 
+		in(p[i+1]);
+        pre[i+1]=min(pre[i],p[i+1]);
+    }
+	forn(i,n)suf[n-i]=max(suf[n-i+1],{p[n-i],n-i});
+    forn(i,n-1)if(pre[i+1]>suf[i+2].first)goto ino;
+	out("Yes");
+    return;
+ino:
+	out("No");
 }
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
@@ -53,5 +69,6 @@ int main(){
 	if (MULTITEST) cin>>t;
 	forn(i,t)solve();
 }
+
 
 
