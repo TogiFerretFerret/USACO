@@ -1,8 +1,8 @@
-// Problem: E. Anisphia Wynn Palettia and Good Permutations
+// Problem: C1. Renako Amaori and XOR Game (easy version)
 // Judge: Codeforces
-// URL: https://codeforces.com/contest/2171/problem/E
+// URL: https://codeforces.com/contest/2171/problem/C1
 // Memory Limit: 256 MB
-// Time Limit: 3000 ms
+// Time Limit: 2000 ms
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -42,11 +42,23 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
-#define MULTITEST false
+#define MULTITEST true
 #define pb push_back
 void solve(){
-	int n;in(n);
-	matrix<int> a(3);
+	int n,x=0,bit,idx;in(n);
+	vector<int> a(n),b(n);
+	forn(i,n){
+		in(a[i]);x^=a[i];
+	}
+	forn(i,n){
+		in(b[i]);x^=b[i];
+	}
+	if(!x)goto tie;
+	forn(i,20)if(x&1<<i)bit=i;
+	forn(i,n)if((a[i]^b[i])&1<<bit)idx=i;
+	out(idx&1?"Mai":"Ajisai");return;
+	tie:
+		out("Tie");return;
 }
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
