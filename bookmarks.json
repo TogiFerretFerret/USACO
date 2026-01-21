@@ -1,0 +1,11 @@
+{
+  "books": {
+    "./v01.epub": {
+      "chapter_href": "OEBPS/Text/section-0005.html",
+      "node_index": 2,
+      "last_read": "2026-01-21T21:26:28.373925180Z",
+      "chapter_index": 6,
+      "total_chapters": 10
+    }
+  }
+}

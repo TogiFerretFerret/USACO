@@ -44,9 +44,7 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 #define pb push_back
 
 void solve(){
-	int n;
-	if (!(cin >> n)) return;
-	
+	int n;in(n);
 	vector<string> s(3);
 	in(s);
 	
