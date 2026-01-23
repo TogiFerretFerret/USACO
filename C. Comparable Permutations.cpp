@@ -25,9 +25,6 @@ template<class T> istream& operator>>(istream& i, vector<T>& v) { for(auto& x : 
 template<class T> ostream& operator<<(ostream& o, const vector<T>& v) { for(int i=0; i<v.size(); ++i) o << v[i] << (i==v.size()-1?"":" "); return o; }
 #define m1(x) template<class T, class... U> void x(T&& a, U&&... b)
 #define m2(x) (int[]){(x forward<U>(b),0)...}
-m1(out) { cout << forward<T>(a);  m2(cout << " " <<); cout << "\n"; }
-m1(debug) { cerr << forward<T>(a);  m2(cerr << " " <<); cerr << "\n"; }
-m1(in) { cin >> forward<T>(a); m2(cin >>); }
 template<typename T1,typename T2> using hashmap=unordered_map<T1,T2,CHASH>;
 template<typename TM> using matrix=vector<vector<TM>>;
 using graph=matrix<int>;
@@ -45,14 +42,43 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 #define f0rn(v,s,e) for(int v=(s);v>(e);--v)
 #define fOrn(v,s,e) for(int v=(s);v<(e);++v)
 #define INTERACTIVE true
+#if INTERACTIVE
+m1(out) { cout << forward<T>(a);  m2(cout << " " <<); cout << endl; }//softmod for interactive
+m1(debug) { cerr << forward<T>(a);  m2(cerr << " " <<); cerr << "\n"; }
+m1(in) { cin >> forward<T>(a); m2(cin >>); }
+#else
+m1(out) { cout << forward<T>(a);  m2(cout << " " <<); cout << "\n"; }//softmod for interactive
+m1(debug) { cerr << forward<T>(a);  m2(cerr << " " <<); cerr << "\n"; }
+m1(in) { cin >> forward<T>(a); m2(cin >>); }
+#endif
 #define MULTITEST true
 #define pb push_back
 void solve(){
 	function<int(int,int)> ask =[&](int i,int j)->int {
 		out("?",i,j);int ans;in(ans);return ans;
 	};
+	function<void(vector<int>)> ans=[&](vector<int> i)->void{cout<<"! ";out(i);};
 	int n;in(n);
 	int j=-1;vector<int> v(n+2);v[n]=1;
+	f0rn(i,n-1,0){
+		v[i]=ask(i,i+1);
+		if(v[i]&&!v[i+1]){j=i;break;}
+	}
+	if(j==-1)ans({-1});
+	int k=j+1;while(!v[k+1])++k;
+	// j1k - dec, k1n - inc
+	vector<int> ord;int l=j,r=k+1;
+	while(l>j&&r<=n)if(ask(l,r))ord.pb(l--);else ord.pb(r++);
+	while(l>j)ord.pb(l--);
+	while(r<=n)ord.pb(r++);
+	l=0,r=ord.size()-1;
+	while(l<=r)if(ask(j,ord[l+r>>1]))r=l+r>>1-1;else l=l+r>>1+1;
+	vector<int> res(n+1);
+	iota(all(res),0);
+	res[j]=ord[l];ord[l]=j;
+	fOrn(i,j+1,n+1)res[i]=ord[i-j-1];
+	res.erase(res.begin());
+	ans(res);
 }
 int main(){
 	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
