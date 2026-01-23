@@ -42,11 +42,17 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
+#define f0rn(v,s,e) for(int v=(s);v>(e);--v)
+#define fOrn(v,s,e) for(int v=(s);v<(e);++v)
 #define INTERACTIVE true
-#define MULTITEST false
+#define MULTITEST true
 #define pb push_back
 void solve(){
-	
+	function<int(int,int)> ask =[&](int i,int j)->int {
+		out("?",i,j);int ans;in(ans);return ans;
+	};
+	int n;in(n);
+	int j=-1;vector<int> v(n+2);v[n]=1;
 }
 int main(){
 	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
