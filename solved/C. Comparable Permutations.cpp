@@ -64,15 +64,20 @@ void solve(){
 		v[i]=ask(i,i+1);
 		if(v[i]&&!v[i+1]){j=i;break;}
 	}
-	if(j==-1)ans({-1});
+	if(j==-1){ans({-1});return;}
 	int k=j+1;while(!v[k+1])++k;
 	// j1k - dec, k1n - inc
-	vector<int> ord;int l=j,r=k+1;
+	vector<int> ord;int l=k,r=k+1;
 	while(l>j&&r<=n)if(ask(l,r))ord.pb(l--);else ord.pb(r++);
 	while(l>j)ord.pb(l--);
 	while(r<=n)ord.pb(r++);
 	l=0,r=ord.size()-1;
-	while(l<=r)if(ask(j,ord[l+r>>1]))r=l+r>>1-1;else l=l+r>>1+1;
+	while(l <= r) {
+        int m = l + r >> 1;
+        if(ask(j, ord[m])) r = m - 1;
+        else l = m + 1;
+    }
+	assert(l < (int)ord.size());
 	vector<int> res(n+1);
 	iota(all(res),0);
 	res[j]=ord[l];ord[l]=j;
