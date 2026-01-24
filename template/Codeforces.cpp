@@ -42,6 +42,10 @@ template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, A
 #define f0rn(v,s,e) for(int v=(s);v>(e);--v)
 #define fOrn(v,s,e) for(int v=(s);v<(e);++v)
 #define INTERACTIVE false
+#ifndef LOCAL_JUDGE
+#define FILEMODE false
+#define FILENAME "pname"
+#endif
 #if INTERACTIVE
 m1(out) { cout << forward<T>(a);  m2(cout << " " <<); cout << endl; }//softmod for interactive
 m1(debug) { cerr << forward<T>(a);  m2(cerr << " " <<); cerr << "\n"; }
@@ -58,6 +62,12 @@ void solve(){
 }
 int main(){
 	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
+	#ifndef LOCAL_JUDGE
+	#if FILEMODE
+	freopen(FILENAME".in","r",stdin);
+	freopen(FILENAME".out","w",stdout);
+	#endif
+	#endif
 	int t=1;
 	if (MULTITEST) cin>>t;
 	forn(i,t)solve();
