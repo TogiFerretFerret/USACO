@@ -31,11 +31,11 @@ using graph=matrix<int>;
 template<typename TM> using tensor=vector<matrix<TM>>;
 template<typename TM> using hypermatrix=vector<tensor<TM>>;
 template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, Args... args){
-	if constexpr(sizeof...(args) == 0){
-		return vector<TM>(first, Val);
-	} else {
-		return vector<decltype(make<TM, Val>(args...))>(first, make<TM, Val>(args...));
-	}
+    if constexpr(sizeof...(args) == 0){
+        return vector<TM>(first, Val);
+    } else {
+        return vector<decltype(make<TM, Val>(args...))>(first, make<TM, Val>(args...));
+    }
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
@@ -58,20 +58,99 @@ m1(in) { cin >> forward<T>(a); m2(cin >>); }
 #define MULTITEST false
 #define pb push_back
 void solve(){
-	// how is A-D still submitting?
-	// HECTOPASCAL PEAK
+    int n;
+	in(n);
+
+    matrix<int> A = make<int>(n + 1, n + 1);
+    fOrn(i, 1, n + 1) {
+        fOrn(j, 1, n + 1) {
+            in(A[i][j]);
+        }
+    }
+
+    vector<int> node_salaries(2 * n + 5);
+    fOrn(i, 1, n + 1) {
+        node_salaries[i] = A[i][i];
+    }
+
+    vector<pair<int, int>> parent_edges;
+    int n_counter = n;
+
+    function<void(int, const vector<int>&, vector<bool>&, vector<int>&, int)> dfs = 
+        [&](int u_idx, const vector<int>& subset, vector<bool>& visited, vector<int>& component, int max_val) -> void {
+        visited[u_idx] = true;
+        component.pb(subset[u_idx]);
+        
+        forn(i, subset.size()) {
+            if(visited[i]) continue;
+            int real_v = subset[i];
+            int real_u = subset[u_idx];
+            
+            if (A[real_u][real_v] != max_val) {
+                dfs(i, subset, visited, component, max_val);
+            }
+        }
+    };
+
+    function<int(vector<int>)> build_tree = [&](vector<int> nodes) -> int {
+        if (nodes.empty()) return -1;
+        if (nodes.size() == 1) {
+            return nodes[0];
+        }
+
+        int max_val = -1;
+        for (int u : nodes) {
+            for (int v : nodes) {
+                max_val = max(max_val, A[u][v]);
+            }
+        }
+
+        vector<bool> visited(nodes.size(), false);
+        vector<int> children;
+
+        forn(i, nodes.size()) {
+            if (!visited[i]) {
+                vector<int> component;
+                dfs(i, nodes, visited, component, max_val);
+                children.pb(build_tree(component));
+            }
+        }
+
+        int current_node = ++n_counter;
+        node_salaries[current_node] = max_val;
+        for (int child : children) {
+            parent_edges.pb({child, current_node});
+        }
+
+        return current_node;
+    };
+
+    vector<int> initial_nodes;
+    fOrn(i, 1, n + 1) initial_nodes.pb(i);
+
+    int head = build_tree(initial_nodes);
+
+    out(n_counter);
+    
+    vector<int> print_salaries;
+    fOrn(i, 1, n_counter + 1) {
+        print_salaries.pb(node_salaries[i]);
+    }
+    out(print_salaries);
+
+    out(head);
+    for (pair<int, int> p : parent_edges) out(p);
+    
 }
 int main(){
-	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
-	#ifndef LOCAL_JUDGE
-	#if FILEMODE
-	freopen(FILENAME".in","r",stdin);
-	freopen(FILENAME".out","w",stdout);
-	#endif
-	#endif
-	int t=1;
-	if (MULTITEST) cin>>t;
-	forn(i,t)solve();
+    if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
+    #ifndef LOCAL_JUDGE
+    #if FILEMODE
+    freopen(FILENAME".in","r",stdin);
+    freopen(FILENAME".out","w",stdout);
+    #endif
+    #endif
+    int t=1;
+    if (MULTITEST) cin>>t;
+    forn(i,t)solve();
 }
-
-
