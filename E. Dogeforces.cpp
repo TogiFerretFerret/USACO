@@ -59,6 +59,7 @@ m1(in) { cin >> forward<T>(a); m2(cin >>); }
 #define pb push_back
 void solve(){
 	// how is A-D still submitting?
+	// HECTOPASCAL PEAK
 }
 int main(){
 	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
