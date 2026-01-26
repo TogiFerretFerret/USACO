@@ -31,11 +31,11 @@ using graph=matrix<int>;
 template<typename TM> using tensor=vector<matrix<TM>>;
 template<typename TM> using hypermatrix=vector<tensor<TM>>;
 template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, Args... args){
-	if constexpr(sizeof...(args) == 0){
-		return vector<TM>(first, Val);
-	} else {
-		return vector<decltype(make<TM, Val>(args...))>(first, make<TM, Val>(args...));
-	}
+    if constexpr(sizeof...(args) == 0){
+        return vector<TM>(first, Val);
+    } else {
+        return vector<decltype(make<TM, Val>(args...))>(first, make<TM, Val>(args...));
+    }
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
@@ -55,22 +55,73 @@ m1(out) { cout << std::forward<T>(a);  m2(cout << " " <<); cout << "\n"; }//soft
 m1(debug) { cerr << std::forward<T>(a);  m2(cerr << " " <<); cerr << "\n"; }
 m1(in) { cin >> std::forward<T>(a); m2(cin >>); }
 #endif
-#define MULTITEST false
+#define MULTITEST true
 #define pb push_back
 void solve(){
-	
+    int n;
+    in(n);
+    string s;
+    in(s);
+
+    int count1 = 0;
+    for(char c : s) if (c == '1') count1++;
+    
+    if (count1 % 2 != 0) {
+        out("-1");
+        return;
+    }
+
+    vector<int> b;
+    vector<int> mixed_pairs_idx;
+    forn(i, n) {
+        if (s[2 * i] != s[2 * i + 1]) {
+            mixed_pairs_idx.pb(i);
+        }
+    }
+
+    if (!mixed_pairs_idx.empty()) {
+        char prev_sel_val = s[2 * mixed_pairs_idx[0] + 1]; 
+        b.pb(2 * mixed_pairs_idx[0] + 1);
+
+        fOrn(k, 1, mixed_pairs_idx.size()) {
+            int i = mixed_pairs_idx[k];
+            char u = s[2 * i];
+            char v = s[2 * i + 1];
+            
+            if (u == prev_sel_val) {
+                b.pb(2 * i + 1);
+                prev_sel_val = v;
+            } else {
+                b.pb(2 * i);
+                prev_sel_val = u;
+            }
+        }
+    }
+
+    cout << b.size();
+    if (!b.empty()) {
+        cout << " ";
+        forn(i, b.size()) {
+            cout << (b[i] + 1) << (i == b.size() - 1 ? "" : " ");
+        }
+    }
+    cout << "\n";
+
+    vector<int> partition;
+    forn(i, n) {
+        partition.pb(2 * i + 1);
+    }
+    out(partition);
 }
 int main(){
-	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
-	#ifndef LOCAL_JUDGE
-	#if FILEMODE
-	freopen(FILENAME".in","r",stdin);
-	freopen(FILENAME".out","w",stdout);
-	#endif
-	#endif
-	int t=1;
-	if (MULTITEST) cin>>t;
-	forn(i,t)solve();
+    if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
+    #ifndef LOCAL_JUDGE
+    #if FILEMODE
+    freopen(FILENAME".in","r",stdin);
+    freopen(FILENAME".out","w",stdout);
+    #endif
+    #endif
+    int t=1;
+    if (MULTITEST) cin>>t;
+    forn(i,t)solve();
 }
-
-
