@@ -1,52 +1,44 @@
-23:36:43 Starting Bookokrat EPUB reader
-23:36:43 [DEBUG] (1) bookokrat::settings: Loaded settings from "/home/river/.config/bookokrat/config.yaml"
-23:36:43 [DEBUG] (1) bookokrat::theme: Applied saved theme: Oceanic Next
-23:36:43 Image picker initial protocol type: Kitty
-23:36:43 Kitty protocol detected, using Kitty
-23:36:43 Final protocol type: Kitty
-23:36:43 [DEBUG] (1) bookokrat::main_app: Initial terminal size: 207x56
-23:36:43 Loading document from path: ./Adachi to Shimamura v01.epub
-23:36:43 Attempting to load EPUB file: ./Adachi to Shimamura v01.epub
-23:36:43 Successfully created EpubDoc for: ./Adachi to Shimamura v01.epub
-23:36:43 EPUB spine details: 37 pages, current position: 0
-23:36:43 EPUB title: Adachi to Shimamura v01
-23:36:43 EPUB author: Hitoma Iruma
-23:36:43 Initial content available at position 0, mime: application/xhtml+xml, size: 462 bytes
-23:36:43 Successfully loaded EPUB document ./Adachi to Shimamura v01.epub, total_chapter: 37, current position: 0
-23:36:43 [DEBUG] (1) bookokrat::images::book_images: Loading images for book: "./Adachi to Shimamura v01.epub"
-23:36:43 Starting image extraction for: ./Adachi to Shimamura v01.epub
-23:36:43 Found existing images in directory: "temp_images/Adachi to Shimamura v01"
-23:36:43 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 0 images to load in document
-23:45:37 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:48:09 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:48:12 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:48:14 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:48:17 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:48:20 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:48:31 [DEBUG] (1) bookokrat::settings: Saved settings to "/home/river/.config/bookokrat/config.yaml"
-23:57:03 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/0014.png' to '"temp_images/Adachi to Shimamura v01/OEBPS/Images/0014.png"'
-23:57:03 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/0014.png' size: 1120x1600
-23:57:03 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 1 images to load in document
-23:57:03 [DEBUG] (10) bookokrat::images::image_storage: Resolved image '../Images/0014.png' to '"temp_images/Adachi to Shimamura v01/OEBPS/Images/0014.png"'
-23:57:03 [DEBUG] (10) bookokrat::images::book_images: Successfully loaded image: ../Images/0014.png
-23:57:03 [DEBUG] (10) bookokrat::images::book_images: Resizing ../Images/0014.png from 1120x1600 to 409x585
-23:57:03 Background image loading complete: 1 images loaded and scaled in 25.944986ms
-23:57:03 [DEBUG] (1) bookokrat::images::background_image_loader: Received 1 loaded images from background thread
-23:57:03 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 11KB (82% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 11KB (82% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 13KB (79% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 16KB (74% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 16KB (74% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 16KB (75% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 15KB (76% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 14KB (77% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 11KB (82% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 7KB (88% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 7KB (88% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 6KB (91% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 8KB (87% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 13KB (79% reduction)
-23:57:03 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 15KB (76% reduction)
-23:57:03 [DEBUG] (1) bookokrat::main_app: Terminal draw/flush took 63ms
-23:57:07 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 0 images to load in document
+02:00:26 Starting Bookokrat EPUB reader
+02:00:26 [DEBUG] (1) bookokrat::settings: Loaded settings from "/home/river/.config/bookokrat/config.yaml"
+02:00:26 [DEBUG] (1) bookokrat::theme: Applied saved theme: Oceanic Next
+02:00:26 Image picker initial protocol type: Kitty
+02:00:26 Kitty protocol detected, using Kitty
+02:00:26 Final protocol type: Kitty
+02:00:26 [DEBUG] (1) bookokrat::main_app: Initial terminal size: 207x54
+02:00:26 Loading document from path: ./Adachi to Shimamura v01.epub
+02:00:26 Attempting to load EPUB file: ./Adachi to Shimamura v01.epub
+02:00:26 Successfully created EpubDoc for: ./Adachi to Shimamura v01.epub
+02:00:26 EPUB spine details: 37 pages, current position: 0
+02:00:26 EPUB title: Adachi to Shimamura v01
+02:00:26 EPUB author: Hitoma Iruma
+02:00:26 Initial content available at position 0, mime: application/xhtml+xml, size: 462 bytes
+02:00:26 Successfully loaded EPUB document ./Adachi to Shimamura v01.epub, total_chapter: 37, current position: 0
+02:00:26 [DEBUG] (1) bookokrat::images::book_images: Loading images for book: "./Adachi to Shimamura v01.epub"
+02:00:26 Starting image extraction for: ./Adachi to Shimamura v01.epub
+02:00:26 Found existing images in directory: "temp_images/Adachi to Shimamura v01"
+02:00:27 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 0 images to load in document
+02:25:44 [DEBUG] (1) bookokrat::images::image_storage: Resolved image '../Images/0015.png' to '"temp_images/Adachi to Shimamura v01/OEBPS/Images/0015.png"'
+02:25:44 [DEBUG] (1) bookokrat::images::book_images: Image '../Images/0015.png' size: 1120x1600
+02:25:44 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 1 images to load in document
+02:25:44 [DEBUG] (3) bookokrat::images::image_storage: Resolved image '../Images/0015.png' to '"temp_images/Adachi to Shimamura v01/OEBPS/Images/0015.png"'
+02:25:44 [DEBUG] (3) bookokrat::images::book_images: Successfully loaded image: ../Images/0015.png
+02:25:44 [DEBUG] (3) bookokrat::images::book_images: Resizing ../Images/0015.png from 1120x1600 to 409x585
+02:25:44 Background image loading complete: 1 images loaded and scaled in 21.319389ms
+02:25:44 [DEBUG] (1) bookokrat::images::background_image_loader: Received 1 loaded images from background thread
+02:25:44 [DEBUG] (1) bookokrat::main_app: Images loaded, forcing redraw
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 1KB (98% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 1KB (99% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 1KB (99% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 4KB (93% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 2KB (97% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 1KB (98% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 1KB (98% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:44 [DEBUG] (1) bookokrat::vendored::ratatui_image::protocol::kitty: Kitty protocol: compressed 62KB to 0KB (100% reduction)
+02:25:46 [DEBUG] (1) bookokrat::widget::text_reader::images: Found 0 images to load in document

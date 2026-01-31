@@ -1,10 +1,10 @@
 {
   "books": {
     "./Adachi to Shimamura v01.epub": {
-      "chapter_href": "OEBPS/Text/part0020.html",
-      "node_index": 48,
-      "last_read": "2026-01-31T01:04:03.237067508Z",
-      "chapter_index": 19,
+      "chapter_href": "OEBPS/Text/part0022.html",
+      "node_index": 29,
+      "last_read": "2026-01-31T14:30:36.708826906Z",
+      "chapter_index": 21,
       "total_chapters": 37
     }
   }
