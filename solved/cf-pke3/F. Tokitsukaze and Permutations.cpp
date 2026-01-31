@@ -31,11 +31,11 @@ using graph=matrix<int>;
 template<typename TM> using tensor=vector<matrix<TM>>;
 template<typename TM> using hypermatrix=vector<tensor<TM>>;
 template<typename TM, TM Val = TM(), typename... Args> auto make(size_t first, Args... args){
-	if constexpr(sizeof...(args) == 0){
-		return vector<TM>(first, Val);
-	} else {
-		return vector<decltype(make<TM, Val>(args...))>(first, make<TM, Val>(args...));
-	}
+    if constexpr(sizeof...(args) == 0){
+        return vector<TM>(first, Val);
+    } else {
+        return vector<decltype(make<TM, Val>(args...))>(first, make<TM, Val>(args...));
+    }
 }
 #define all(x) (x).begin(),(x).end()
 #define forn(i,n) for(int i=0;i<(n);++i)
@@ -55,22 +55,52 @@ m1(out) { cout << std::forward<T>(a);  m2(cout << " " <<); cout << "\n"; }//soft
 m1(debug) { cerr << std::forward<T>(a);  m2(cerr << " " <<); cerr << "\n"; }
 m1(in) { cin >> std::forward<T>(a); m2(cin >>); }
 #endif
-#define MULTITEST false
+#define MULTITEST true
 #define pb push_back
 void solve(){
-	
+    int n, k;
+    in(n, k);
+    vector<int> v(n);
+    in(v);
+    
+    ll MOD = 998244353;
+
+    function<ll(int)> factorial_mod = [&](int k_val) -> ll {
+        ll res = 1;
+        fOrn(i, 2, k_val + 1) {
+            res = (res * i) % MOD;
+        }
+        return res;
+    };
+
+    fOrn(i, n - k, n) {
+        if (v[i] > 0) {
+            out(0);
+            return;
+        }
+    }
+
+    ll ans = factorial_mod(k);
+
+    fOrn(i, 1, n - k + 1) {
+        int val = v[i-1];
+        if (val == -1) {
+            ans = (ans * (ll)(k + i)) % MOD;
+        } else if (val == 0) {
+            ans = (ans * (ll)(k + 1)) % MOD;
+        }
+    }
+    out(ans);
 }
 int main(){
-	if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
-	#ifndef LOCAL_JUDGE
-	#if FILEMODE
-	freopen(FILENAME".in","r",stdin);
-	freopen(FILENAME".out","w",stdout);
-	#endif
-	#endif
-	int t=1;
-	if (MULTITEST) cin>>t;
-	forn(i,t)solve();
+    if(!INTERACTIVE)cin.tie(0)->sync_with_stdio(0);
+    #ifndef LOCAL_JUDGE
+    #if FILEMODE
+    freopen(FILENAME".in","r",stdin);
+    freopen(FILENAME".out","w",stdout);
+    #endif
+    #endif
+    int t=1;
+    if (MULTITEST) cin>>t;
+    forn(i,t)solve();
 }
-
-
